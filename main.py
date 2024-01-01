@@ -1,11 +1,25 @@
+# https://www.pythontutorial.net/pyqt/pyqt-hello-world/
+import sys
 from PyQt5.QtWidgets import QApplication, QWidget
 
-# create the QApplication
-app = QApplication([])
 
-# create the main window
-window = QWidget(windowTitle='Hello World')
-window.show()
+class MainWindow(QWidget):
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        
+        # set the window title
+        self.setWindowTitle('Hello World')
+        
+        # show the window
+        self.show()
 
-# start the event loop
-app.exec() 
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+
+    # create the main window
+    window = MainWindow()
+
+    # start the event loop
+    sys.exit(app.exec())
